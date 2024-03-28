@@ -12,12 +12,13 @@ Requirements:
 🙏 components communication (inputs, outputs): pass collected data between pages/components
 🚀 register user interactions and their timing (or any other data than can be use as list)
 🚀 display list - filterable and sortable (pipes)
+
 Example project
 🙏 Two pages
+- Intro page with intro text and player form
+- Game page
 
-Intro page with intro text and player form
-Game page
-Intro page specification
+1. Intro page specification
 🙏 basic version
 
 some quick introductory text
@@ -27,9 +28,9 @@ player email
 start game button
 upon clicking 'start' we check name and email and notify player whats wrong
 if name and email are fine then store this data and move to the game page
-Game page specification
-🙏 basic version
 
+2. Game page specification
+🙏 basic version
 there should be a button 'exit game' which will move player to intro page
 there should be nice, personalized welcome message (with player name)
 integrate ngx-tetris or ngx-snake or ngx-race
@@ -37,6 +38,7 @@ big indication of the game status (ready, started, paused...)
 we need points counting mechanism (each cleared line counts)
 display current amount of points
 display time spent wile playing
+
 🚀 extra points version should additionally have:
 
 there should be a 'gameplay history' with all actions and each entry should have
