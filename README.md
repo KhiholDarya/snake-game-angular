@@ -1,17 +1,17 @@
 # snake-game-angular
 
 Emoji coded:
-🙏 - required (3,4)
-🚀 - extra points (5)
+- 🙏 - required (3,4)
+- 🚀 - extra points (5)
 
 Requirements:
 
-🙏 app should consist of 2+ pages (DONT USE ROUTING FOR THAT 😈 as we dont know routing yet)
-🙏 use ngModel to build form with validators
-🙏 form shoul be user friendly: display errors and block buttons
-🙏 components communication (inputs, outputs): pass collected data between pages/components
-🚀 register user interactions and their timing (or any other data than can be use as list)
-🚀 display list - filterable and sortable (pipes)
+- 🙏 app should consist of 2+ pages (DONT USE ROUTING FOR THAT 😈 as we dont know routing yet)
+- 🙏 use ngModel to build form with validators
+- 🙏 form shoul be user friendly: display errors and block buttons
+- 🙏 components communication (inputs, outputs): pass collected data between pages/components
+- 🚀 register user interactions and their timing (or any other data than can be use as list)
+- 🚀 display list - filterable and sortable (pipes)
 
 Example project
 🙏 Two pages
