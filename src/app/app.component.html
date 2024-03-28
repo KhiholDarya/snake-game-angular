@@ -1,0 +1,21 @@
+<div class="container-box">
+  <ul class="nav">
+    <li class="nav-item nav-item-time">TIME: <span class="color-green">{{ time }}</span></li>
+    <li class="nav-item nav-item-score">SCORE: <span class="color-green">{{ score }}</span></li>
+    <li class="nav-item nav-item-status">GAME STATUS: <span class="color-green">{{ gameStatus }}</span></li>
+    @if(loginStatus){
+    <button (click)="onLogOut()" type="button" class="nav-item logout">EXIT GAME</button>
+    }
+  </ul>
+
+  <h1>SNAKE GAME 🐍</h1>
+  @if(!loginStatus){
+  <app-intro-page (userIsLogged)="onGamePage($event)"></app-intro-page>
+  }
+  @if(loginStatus){
+  <h2>Goog luck , {{ name }} !</h2>
+  <br>
+  <app-game-page (statusGame)="handleGameStatus($event)" (points)="handlePoints($event)" [status]="gameStatus"
+    (gameTime)="getTime($event)"></app-game-page>
+  }
+</div>

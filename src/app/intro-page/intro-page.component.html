@@ -1,0 +1,27 @@
+<div class="container">
+
+  <br />
+  <br />
+  <h2>WELCOME!</h2>
+  <form #form="ngForm">
+    <div class="label-card">
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Player name</label>
+        <input name="name" ngModel #nameModel="ngModel" required type="name" class="form-control"
+          id="formGroupExampleInput2" placeholder="Player name" />
+      </div>
+      <p *ngIf="nameModel.touched && nameModel.invalid">Name must be at leasr 1 char long</p>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input name="email" ngModel #emailModel="ngModel" type="email" required email class="form-control"
+          id="formGroupExampleInput2" placeholder="name@example.com" />
+      </div>
+      <p *ngIf="emailModel.touched && emailModel.invalid">Check if your email adress is correct!</p>
+      <br />
+      <div class="button-box">
+        <button [disabled]="form.valid === false" (click)="onStartClicked(form.form.value)" type="button"
+          class="btn btn-secondary start-game">START GAME</button>
+      </div>
+    </div>
+  </form>
+</div>

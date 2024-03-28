@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="game-card game-card-container">
+    <div class="game-card-left">
+      <div class="board">
+        <ngx-snake #game (foodEaten)="eat($event)" (gameOver)="gameOver($event)">
+        </ngx-snake>
+      </div>
+      <div class="buttons">
+        <br>
+        <br>
+        <button (click)="startGame()">Start</button>
+        <button (click)="stopGame()">Stop</button>
+        <button (click)="resetGame()">Reset</button>
+        <br>
+        <button (click)="game.actionLeft()">Left &#9668;</button>
+        <button (click)="game.actionUp()">Up &#9650;</button>
+        <button (click)="game.actionRight()">Right &#9658;</button>
+        <br>
+        <button (click)="game.actionDown()">Down &#9660;</button>
+      </div>
+    </div>
+    <div class="game-card-right">
+      <button (click)="toggleGameplayHistoryVisibility()" class="is-history-visible"> {{ showGameplayHistory ? 'Hide History' : 'Show History' }} </button>
+      <div *ngIf="showGameplayHistory" class="sorting">
+        <label>Filter by Event Type:
+          <select [(ngModel)]="filterEventType">
+            <option value="all">All</option>
+            <option value="Game Started">Game Started</option>
+            <option value="Game Paused">Game Paused</option>
+            <option value="Game Over">Game Over</option>
+            <option value="Game Reset">Game Reset</option>
+            <option value="Food Eaten">Food Eaten</option>
+          </select>
+        </label>
+        <br>
+        <label>Sort by Timestamp:
+          <select [(ngModel)]="sortOrder">
+            <option value="latest">Latest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+        </label>
+        <hr>
+        <ul>
+          <li *ngFor="let entry of gameplayHistory | filterByEventType: filterEventType| sortByTimestampPipe: sortOrder">
+            {{ entry.timestamp | date: 'medium' }} <br> - {{ entry.action }}
+            <hr>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
