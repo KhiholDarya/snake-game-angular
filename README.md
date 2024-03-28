@@ -7,11 +7,17 @@ Emoji coded:
 Requirements:
 
 🙏 app should consist of 2+ pages (DONT USE ROUTING FOR THAT 😈 as we dont know routing yet)
+
 🙏 use ngModel to build form with validators
+
 🙏 form should be user friendly: display errors and block buttons
+
 🙏 components communication (inputs, outputs): pass collected data between pages/components
+
 🚀 register user interactions and their timing (or any other data than can be use as list)
+
 🚀 display list - filterable and sortable (pipes)
+
 
 Example project
 🙏 Two pages
